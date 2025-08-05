@@ -1,22 +1,22 @@
 //brute-force
-// function sample(arr) {
-//   let max = arr[0];
-//   let secondMax = -1; //assuming no negative number
+function sample(arr) {
+  let max = arr[0];
+  let secondMax = -1; //assuming no negative number
 
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] > max) {
-//       max = arr[i];
-//     }
-//   }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
 
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] > secondMax && arr[i] < max) {
-//       secondMax = arr[i];
-//     }
-//   }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > secondMax && arr[i] < max) {
+      secondMax = arr[i];
+    }
+  }
 
-//   return secondMax;
-// }
+  return secondMax;
+}
 
 //optimal
 function sample(arr) {
