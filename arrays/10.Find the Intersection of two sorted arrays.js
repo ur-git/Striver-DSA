@@ -1,3 +1,4 @@
+//brute-force method
 function sample(arr1, arr2) {
   let freq = {};
   let intersection = [];
@@ -10,6 +11,31 @@ function sample(arr1, arr2) {
         break;
       }
       if (arr2[j] > arr1[i]) break;
+    }
+  }
+
+  return intersection;
+}
+
+//optimal method
+function sample(arr1, arr2) {
+  let i = 0,
+    j = 0;
+  let intersection = [];
+  let seen = new Set();
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] === arr2[j]) {
+      if (!seen.has(arr1[i])) {
+        seen.add(arr1[i]);
+        intersection.push(arr1[i]);
+      }
+      i++;
+      j++;
+    } else if (arr1[i] < arr2[j]) {
+      i++;
+    } else {
+      j++;
     }
   }
 
