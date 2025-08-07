@@ -2,24 +2,24 @@
 
 //brute-force method
 //1. generate all subarrays
-// function sample(arr, k) {
-//   let maxlength = 0;
-//   for (let i = 0; i < arr.length; i++) {
-//     let sum = 0;
-//     for (let j = i; j < arr.length; j++) {
-//       sum += arr[j];
+function sample(arr, k) {
+  let maxlength = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let sum = 0;
+    for (let j = i; j < arr.length; j++) {
+      sum += arr[j];
 
-//       let l = j - i + 1;
-//       if (l > maxlength && sum === k) {
-//         maxlength = l;
-//       }
-//     }
-//   }
+      let l = j - i + 1;
+      if (l > maxlength && sum === k) {
+        maxlength = l;
+      }
+    }
+  }
 
-//   return maxlength;
-// }
+  return maxlength;
+}
 
-//better method
+//optimal method
 function sample(arr, k) {
   let hash = {};
   let sum = 0;
