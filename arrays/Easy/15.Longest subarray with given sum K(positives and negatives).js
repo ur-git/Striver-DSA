@@ -19,7 +19,7 @@ function sample(arr, k) {
   return maxlength;
 }
 
-//better method
+//optimal method
 function sample(arr, k) {
   let hash = {};
   let sum = 0;
@@ -48,32 +48,4 @@ function sample(arr, k) {
   return maxlength;
 }
 
-//optimal method(only for positives)
-function sample(arr, k) {
-  let sum = 0;
-  let maxlength = 0;
-  let i = 0;
-  let j = 0;
-
-  while (i < arr.length && j < arr.length) {
-    sum += arr[j];
-
-    if (sum === k) {
-      l = j - i + 1;
-      if (l > maxlength) {
-        maxlength = l;
-      }
-    }
-
-    if (sum > k) {
-      sum -= arr[i];
-      i++;
-    }
-
-    j++;
-  }
-
-  return maxlength;
-}
-
-console.log(sample([1, 2, 3, 1, 1, 1, 4, 2, 3], 3)); //[1,1,1]
+console.log(sample([1, 2, -1, 3], 4)); // Output: 3 (subarray [2, -1, 3])
